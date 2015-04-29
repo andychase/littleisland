@@ -1,9 +1,9 @@
 li-client
 =========
 
-MMO Client (in-development)
+![shot.png](shot.png)
 
-In Actionscript.
+Demo MMO Client In Actionscript.
 
 Licence
 -------
