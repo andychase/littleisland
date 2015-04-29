@@ -1,41 +1,24 @@
 package
 {
-	import roshan.buffer.CharacterAction;
-	import roshan.buffer.MapChange;
-	import roshan.buffer.MapData;
-	import flash.display.Bitmap;
-	import flash.display.BitmapData;
-	import flash.display.BitmapDataChannel;
-	import flash.display.MovieClip;
-	import flash.display.Shader;
-	import flash.display.Sprite;
-	import flash.errors.IOError;
-	import flash.events.Event;
-	import flash.events.IOErrorEvent;
-	import flash.events.SecurityErrorEvent;
-	import flash.events.ShaderEvent;
-	import flash.filters.BlurFilter;
-	import flash.filters.ColorMatrixFilter;
-	import flash.filters.ConvolutionFilter;
-	import flash.filters.DisplacementMapFilter;
-	import flash.filters.GlowFilter;
-	import flash.filters.ShaderFilter;
-	import flash.geom.Point;
-	import flash.utils.ByteArray;
-	import flash.utils.Dictionary;
-	import net.flashpunk.Entity;
-	import net.flashpunk.graphics.Image;
-	import net.flashpunk.graphics.Text;
-	import net.flashpunk.tweens.misc.Alarm;
-	import net.flashpunk.tweens.misc.VarTween;
-	import net.flashpunk.World;
-	import net.flashpunk.FP;
-	import flash.net.Socket;
-	import roshan.buffer.ACTION;
-	import roshan.buffer.CHANGE;	
-	import flash.system.Security;
-	
-	public class GameWorld extends World
+import flash.events.Event;
+import flash.events.IOErrorEvent;
+import flash.events.SecurityErrorEvent;
+import flash.net.Socket;
+import flash.utils.Dictionary;
+
+import net.flashpunk.Entity;
+import net.flashpunk.FP;
+import net.flashpunk.World;
+import net.flashpunk.tweens.misc.Alarm;
+import net.flashpunk.tweens.misc.VarTween;
+
+import roshan.buffer.ACTION;
+import roshan.buffer.CHANGE;
+import roshan.buffer.CharacterAction;
+import roshan.buffer.MapChange;
+import roshan.buffer.MapData;
+
+public class GameWorld extends World
 	{
 		public var characters:Dictionary;
 		private var network:Network;
@@ -43,8 +26,7 @@ package
 		private var my_id:int;
 		private var backgrounds:Dictionary;
 		private var sock:Socket;
-		private var filter:ColorMatrixFilter;
-		
+
 		public function GameWorld()
 		{
 			characters = new Dictionary();
@@ -68,8 +50,7 @@ package
 				setup();
 			});
 			sock.timeout = 5000;
-			//sock.connect("coconut.asperous.us", 8081);
-			sock.connect("localhost", 8081);
+			sock.connect("127.0.0.1", 8081);
 		}
 		
 		public function setup():void {
@@ -98,12 +79,12 @@ package
 		}
 		
 		override public function update():void {
-			// Update all entities on this gameworld
-			super.update()
+			// Update all entities on this game world
+			super.update();
 			// The character movement connected with Character
 			if (my_id in characters) {
 				var me:Hero = characters[my_id];
-				var dir:int = xyKeyboard.getDirection()
+				var dir:int = xyKeyboard.getDirection();
 				var x:Number = (FP.elapsed * 60 * xyKeyboard.dirToX(dir)) + me.x;
 				var y:Number = (FP.elapsed * 60 * xyKeyboard.dirToY(dir)) + me.y;
 				
@@ -185,7 +166,7 @@ package
 				var text:TextDisplay = new TextDisplay(CharAction.say,
 					characters[CharAction.id].x+18,
 					characters[CharAction.id].y);
-				text.fader = new VarTween(function ():void { remove(text); } )
+				text.fader = new VarTween(function ():void { remove(text); } );
 				addTween(text.fader);
 				add(text);
 				text.waitAndFade(1 + Math.min(text.txt.text.length * 0.4, 10), 4);
@@ -199,7 +180,7 @@ package
 				for (var char_id:String in characters) {
 					if (xyKeyboard.roundToMapBox(characters[char_id].lastX) == MpChange.mapBoxX &&
 						xyKeyboard.roundToMapBox(characters[char_id].lastY) == MpChange.mapBoxY) {
-						remove(characters[char_id])
+						remove(characters[char_id]);
 						delete(characters[char_id])
 					}
 				}

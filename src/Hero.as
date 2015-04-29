@@ -1,18 +1,14 @@
 package
 {
-	import roshan.buffer.ACTION;
-	import roshan.buffer.StatusToken;
-	import roshan.buffer.TOKEN;
-	import net.flashpunk.Entity;
-	import net.flashpunk.graphics.Image;
-	import net.flashpunk.FP;
-	import net.flashpunk.graphics.Spritemap;
-	import net.flashpunk.Tween;
-	import net.flashpunk.tweens.misc.Alarm;
-	import net.flashpunk.utils.Ease;
-	import net.flashpunk.tweens.misc.VarTween;
+import net.flashpunk.Entity;
+import net.flashpunk.Tween;
+import net.flashpunk.graphics.Spritemap;
+import net.flashpunk.tweens.misc.VarTween;
+import net.flashpunk.utils.Ease;
 
-	public class Hero extends Entity
+import roshan.buffer.ACTION;
+
+public class Hero extends Entity
 	{
 		public var towardsX:int;
 		public var towardsY:int;

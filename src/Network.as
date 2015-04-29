@@ -1,14 +1,12 @@
 package  
 {
-	import roshan.buffer.CharacterAction;
 	import net.flashpunk.Entity;
 	import net.flashpunk.FP;
 	import roshan.buffer.ClientChange;
 	import roshan.buffer.ACTION;
 	import roshan.buffer.WorldChange;
 	import flash.net.Socket;
-	import flash.events.IOErrorEvent;
-	
+
 	public class Network extends Entity 
 	{
 		private var sock:Socket;
@@ -17,8 +15,8 @@ package
 		private var mapChangeFunc:Function;
 		public var hero:Hero = null;
 		public var sayText:String = "";
-		private var actions:Array = new Array();
-		private var directions:Array = new Array();
+		private var actions:Array = [];
+		private var directions:Array = [];
 		private var send_walk_delay:Number = 0;
 		
 		public function Network(insock:Socket, inMoveFunc:Function, inMapChangeFunc:Function, inMapFunc:Function) 
@@ -32,7 +30,7 @@ package
 			try {
 				cs.writeDelimitedTo(sock);
 				sock.flush();
-			} catch (e:Error) { return; }
+			} catch (e:Error) {  }
 		}
 		
 		public function startAction(action:int, direction:int):void {
@@ -42,7 +40,7 @@ package
 		
 		override public function update():void 
 		{
-			if ( hero != null && 
+			if ( hero != null &&
 				(actions.length > 0 || sayText != "" || hero.towardsX != hero.lastX || hero.towardsY != hero.lastY)) {
 				sendUpdate();
 			}

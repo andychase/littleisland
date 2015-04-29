@@ -15,7 +15,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const ACTION:FieldDescriptor$TYPE_ENUM = new FieldDescriptor$TYPE_ENUM("roshan.buffer.ClientChange.action", "action", (1 << 3) | com.netease.protobuf.WireType.VARINT, roshan.buffer.ACTION);
+		public static const ACTION:FieldDescriptor_TYPE_ENUM = new FieldDescriptor_TYPE_ENUM("roshan.buffer.ClientChange.action", "action", (1 << 3) | com.netease.protobuf.WireType.VARINT, roshan.buffer.ACTION);
 
 		private var action$field:int;
 
@@ -42,7 +42,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const DIRECTION:FieldDescriptor$TYPE_UINT32 = new FieldDescriptor$TYPE_UINT32("roshan.buffer.ClientChange.direction", "direction", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const DIRECTION:FieldDescriptor_TYPE_UINT32 = new FieldDescriptor_TYPE_UINT32("roshan.buffer.ClientChange.direction", "direction", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var direction$field:uint;
 
@@ -67,7 +67,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const SAY:FieldDescriptor$TYPE_STRING = new FieldDescriptor$TYPE_STRING("roshan.buffer.ClientChange.say", "say", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const SAY:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("roshan.buffer.ClientChange.say", "say", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var say$field:String;
 
@@ -93,15 +93,15 @@ package roshan.buffer {
 		override com.netease.protobuf.used_by_generated_code final function writeToBuffer(output:com.netease.protobuf.WritingBuffer):void {
 			if (hasAction) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 1);
-				com.netease.protobuf.WriteUtils.write$TYPE_ENUM(output, action$field);
+				com.netease.protobuf.WriteUtils.write_TYPE_ENUM(output, action$field);
 			}
 			if (hasDirection) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 2);
-				com.netease.protobuf.WriteUtils.write$TYPE_UINT32(output, direction$field);
+				com.netease.protobuf.WriteUtils.write_TYPE_UINT32(output, direction$field);
 			}
 			if (hasSay) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.LENGTH_DELIMITED, 3);
-				com.netease.protobuf.WriteUtils.write$TYPE_STRING(output, say$field);
+				com.netease.protobuf.WriteUtils.write_TYPE_STRING(output, say$field);
 			}
 			for (var fieldKey:* in this) {
 				super.writeUnknown(output, fieldKey);
@@ -116,28 +116,28 @@ package roshan.buffer {
 			var direction$count:uint = 0;
 			var say$count:uint = 0;
 			while (input.bytesAvailable > bytesAfterSlice) {
-				var tag:uint = com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input);
+				var tag:uint = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 				switch (tag >> 3) {
 				case 1:
 					if (action$count != 0) {
 						throw new flash.errors.IOError('Bad data format: ClientChange.action cannot be set twice.');
 					}
 					++action$count;
-					this.action = com.netease.protobuf.ReadUtils.read$TYPE_ENUM(input);
+					this.action = com.netease.protobuf.ReadUtils.read_TYPE_ENUM(input);
 					break;
 				case 2:
 					if (direction$count != 0) {
 						throw new flash.errors.IOError('Bad data format: ClientChange.direction cannot be set twice.');
 					}
 					++direction$count;
-					this.direction = com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input);
+					this.direction = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 					break;
 				case 3:
 					if (say$count != 0) {
 						throw new flash.errors.IOError('Bad data format: ClientChange.say cannot be set twice.');
 					}
 					++say$count;
-					this.say = com.netease.protobuf.ReadUtils.read$TYPE_STRING(input);
+					this.say = com.netease.protobuf.ReadUtils.read_TYPE_STRING(input);
 					break;
 				default:
 					super.readUnknown(input, tag);

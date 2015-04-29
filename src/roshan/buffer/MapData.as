@@ -15,7 +15,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const MAPNAME:FieldDescriptor$TYPE_STRING = new FieldDescriptor$TYPE_STRING("roshan.buffer.MapData.mapName", "mapName", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const MAPNAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("roshan.buffer.MapData.mapName", "mapName", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var mapName$field:String;
 
@@ -38,7 +38,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const XOFFSET:FieldDescriptor$TYPE_UINT32 = new FieldDescriptor$TYPE_UINT32("roshan.buffer.MapData.xOffset", "xOffset", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const XOFFSET:FieldDescriptor_TYPE_UINT32 = new FieldDescriptor_TYPE_UINT32("roshan.buffer.MapData.xOffset", "xOffset", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var xOffset$field:uint;
 
@@ -65,7 +65,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const YOFFSET:FieldDescriptor$TYPE_UINT32 = new FieldDescriptor$TYPE_UINT32("roshan.buffer.MapData.yOffset", "yOffset", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const YOFFSET:FieldDescriptor_TYPE_UINT32 = new FieldDescriptor_TYPE_UINT32("roshan.buffer.MapData.yOffset", "yOffset", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var yOffset$field:uint;
 
@@ -90,7 +90,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const XSIZE:FieldDescriptor$TYPE_UINT32 = new FieldDescriptor$TYPE_UINT32("roshan.buffer.MapData.xSize", "xSize", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const XSIZE:FieldDescriptor_TYPE_UINT32 = new FieldDescriptor_TYPE_UINT32("roshan.buffer.MapData.xSize", "xSize", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var xSize$field:uint;
 
@@ -115,7 +115,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const YSIZE:FieldDescriptor$TYPE_UINT32 = new FieldDescriptor$TYPE_UINT32("roshan.buffer.MapData.ySize", "ySize", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const YSIZE:FieldDescriptor_TYPE_UINT32 = new FieldDescriptor_TYPE_UINT32("roshan.buffer.MapData.ySize", "ySize", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var ySize$field:uint;
 
@@ -140,7 +140,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const LAYER:RepeatedFieldDescriptor$TYPE_MESSAGE = new RepeatedFieldDescriptor$TYPE_MESSAGE("roshan.buffer.MapData.layer", "layer", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return roshan.buffer.MapLayer; });
+		public static const LAYER:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("roshan.buffer.MapData.layer", "layer", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return roshan.buffer.MapLayer; });
 
 		[ArrayElementType("roshan.buffer.MapLayer")]
 		public var layer:Array = [];
@@ -151,27 +151,27 @@ package roshan.buffer {
 		override com.netease.protobuf.used_by_generated_code final function writeToBuffer(output:com.netease.protobuf.WritingBuffer):void {
 			if (hasMapName) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.LENGTH_DELIMITED, 1);
-				com.netease.protobuf.WriteUtils.write$TYPE_STRING(output, mapName$field);
+				com.netease.protobuf.WriteUtils.write_TYPE_STRING(output, mapName$field);
 			}
 			if (hasXOffset) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 2);
-				com.netease.protobuf.WriteUtils.write$TYPE_UINT32(output, xOffset$field);
+				com.netease.protobuf.WriteUtils.write_TYPE_UINT32(output, xOffset$field);
 			}
 			if (hasYOffset) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 3);
-				com.netease.protobuf.WriteUtils.write$TYPE_UINT32(output, yOffset$field);
+				com.netease.protobuf.WriteUtils.write_TYPE_UINT32(output, yOffset$field);
 			}
 			if (hasXSize) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 4);
-				com.netease.protobuf.WriteUtils.write$TYPE_UINT32(output, xSize$field);
+				com.netease.protobuf.WriteUtils.write_TYPE_UINT32(output, xSize$field);
 			}
 			if (hasYSize) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 5);
-				com.netease.protobuf.WriteUtils.write$TYPE_UINT32(output, ySize$field);
+				com.netease.protobuf.WriteUtils.write_TYPE_UINT32(output, ySize$field);
 			}
 			for (var layer$index:uint = 0; layer$index < this.layer.length; ++layer$index) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.LENGTH_DELIMITED, 6);
-				com.netease.protobuf.WriteUtils.write$TYPE_MESSAGE(output, this.layer[layer$index]);
+				com.netease.protobuf.WriteUtils.write_TYPE_MESSAGE(output, this.layer[layer$index]);
 			}
 			for (var fieldKey:* in this) {
 				super.writeUnknown(output, fieldKey);
@@ -188,45 +188,45 @@ package roshan.buffer {
 			var xSize$count:uint = 0;
 			var ySize$count:uint = 0;
 			while (input.bytesAvailable > bytesAfterSlice) {
-				var tag:uint = com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input);
+				var tag:uint = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 				switch (tag >> 3) {
 				case 1:
 					if (mapName$count != 0) {
 						throw new flash.errors.IOError('Bad data format: MapData.mapName cannot be set twice.');
 					}
 					++mapName$count;
-					this.mapName = com.netease.protobuf.ReadUtils.read$TYPE_STRING(input);
+					this.mapName = com.netease.protobuf.ReadUtils.read_TYPE_STRING(input);
 					break;
 				case 2:
 					if (xOffset$count != 0) {
 						throw new flash.errors.IOError('Bad data format: MapData.xOffset cannot be set twice.');
 					}
 					++xOffset$count;
-					this.xOffset = com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input);
+					this.xOffset = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 					break;
 				case 3:
 					if (yOffset$count != 0) {
 						throw new flash.errors.IOError('Bad data format: MapData.yOffset cannot be set twice.');
 					}
 					++yOffset$count;
-					this.yOffset = com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input);
+					this.yOffset = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 					break;
 				case 4:
 					if (xSize$count != 0) {
 						throw new flash.errors.IOError('Bad data format: MapData.xSize cannot be set twice.');
 					}
 					++xSize$count;
-					this.xSize = com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input);
+					this.xSize = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 					break;
 				case 5:
 					if (ySize$count != 0) {
 						throw new flash.errors.IOError('Bad data format: MapData.ySize cannot be set twice.');
 					}
 					++ySize$count;
-					this.ySize = com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input);
+					this.ySize = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 					break;
 				case 6:
-					this.layer.push(com.netease.protobuf.ReadUtils.read$TYPE_MESSAGE(input, new roshan.buffer.MapLayer()));
+					this.layer.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new roshan.buffer.MapLayer()));
 					break;
 				default:
 					super.readUnknown(input, tag);

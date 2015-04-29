@@ -5,5 +5,6 @@ package roshan.buffer {
 		public static const WALK:int = 3;
 		public static const SAY:int = 4;
 		public static const HURT:int = 5;
+		public static const HEAL:int = 6;
 	}
 }

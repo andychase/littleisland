@@ -15,28 +15,28 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const CHANGE:FieldDescriptor$TYPE_ENUM = new FieldDescriptor$TYPE_ENUM("roshan.buffer.MapChange.change", "change", (1 << 3) | com.netease.protobuf.WireType.VARINT, roshan.buffer.CHANGE);
+		public static const CHANGE:FieldDescriptor_TYPE_ENUM = new FieldDescriptor_TYPE_ENUM("roshan.buffer.MapChange.change", "change", (1 << 3) | com.netease.protobuf.WireType.VARINT, roshan.buffer.CHANGE);
 
 		public var change:int;
 
 		/**
 		 *  @private
 		 */
-		public static const MAPBOXX:FieldDescriptor$TYPE_UINT32 = new FieldDescriptor$TYPE_UINT32("roshan.buffer.MapChange.MapBoxX", "mapBoxX", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const MAPBOXX:FieldDescriptor_TYPE_UINT32 = new FieldDescriptor_TYPE_UINT32("roshan.buffer.MapChange.MapBoxX", "mapBoxX", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		public var mapBoxX:uint;
 
 		/**
 		 *  @private
 		 */
-		public static const MAPBOXY:FieldDescriptor$TYPE_UINT32 = new FieldDescriptor$TYPE_UINT32("roshan.buffer.MapChange.MapBoxY", "mapBoxY", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const MAPBOXY:FieldDescriptor_TYPE_UINT32 = new FieldDescriptor_TYPE_UINT32("roshan.buffer.MapChange.MapBoxY", "mapBoxY", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		public var mapBoxY:uint;
 
 		/**
 		 *  @private
 		 */
-		public static const CHANGEDXS:RepeatedFieldDescriptor$TYPE_UINT32 = new RepeatedFieldDescriptor$TYPE_UINT32("roshan.buffer.MapChange.ChangedXs", "changedXs", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const CHANGEDXS:RepeatedFieldDescriptor_TYPE_UINT32 = new RepeatedFieldDescriptor_TYPE_UINT32("roshan.buffer.MapChange.ChangedXs", "changedXs", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("uint")]
 		public var changedXs:Array = [];
@@ -44,7 +44,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const CHANGEDYS:RepeatedFieldDescriptor$TYPE_UINT32 = new RepeatedFieldDescriptor$TYPE_UINT32("roshan.buffer.MapChange.ChangedYs", "changedYs", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const CHANGEDYS:RepeatedFieldDescriptor_TYPE_UINT32 = new RepeatedFieldDescriptor_TYPE_UINT32("roshan.buffer.MapChange.ChangedYs", "changedYs", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("uint")]
 		public var changedYs:Array = [];
@@ -52,7 +52,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const CHANGEDLAYERS:RepeatedFieldDescriptor$TYPE_UINT32 = new RepeatedFieldDescriptor$TYPE_UINT32("roshan.buffer.MapChange.ChangedLayers", "changedLayers", (6 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const CHANGEDLAYERS:RepeatedFieldDescriptor_TYPE_UINT32 = new RepeatedFieldDescriptor_TYPE_UINT32("roshan.buffer.MapChange.ChangedLayers", "changedLayers", (6 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("uint")]
 		public var changedLayers:Array = [];
@@ -60,7 +60,7 @@ package roshan.buffer {
 		/**
 		 *  @private
 		 */
-		public static const NEWTILE:RepeatedFieldDescriptor$TYPE_UINT32 = new RepeatedFieldDescriptor$TYPE_UINT32("roshan.buffer.MapChange.newTile", "newTile", (7 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const NEWTILE:RepeatedFieldDescriptor_TYPE_UINT32 = new RepeatedFieldDescriptor_TYPE_UINT32("roshan.buffer.MapChange.newTile", "newTile", (7 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("uint")]
 		public var newTile:Array = [];
@@ -70,26 +70,26 @@ package roshan.buffer {
 		 */
 		override com.netease.protobuf.used_by_generated_code final function writeToBuffer(output:com.netease.protobuf.WritingBuffer):void {
 			com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 1);
-			com.netease.protobuf.WriteUtils.write$TYPE_ENUM(output, this.change);
+			com.netease.protobuf.WriteUtils.write_TYPE_ENUM(output, this.change);
 			com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 2);
-			com.netease.protobuf.WriteUtils.write$TYPE_UINT32(output, this.mapBoxX);
+			com.netease.protobuf.WriteUtils.write_TYPE_UINT32(output, this.mapBoxX);
 			com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 3);
-			com.netease.protobuf.WriteUtils.write$TYPE_UINT32(output, this.mapBoxY);
+			com.netease.protobuf.WriteUtils.write_TYPE_UINT32(output, this.mapBoxY);
 			for (var changedXs$index:uint = 0; changedXs$index < this.changedXs.length; ++changedXs$index) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 4);
-				com.netease.protobuf.WriteUtils.write$TYPE_UINT32(output, this.changedXs[changedXs$index]);
+				com.netease.protobuf.WriteUtils.write_TYPE_UINT32(output, this.changedXs[changedXs$index]);
 			}
 			for (var changedYs$index:uint = 0; changedYs$index < this.changedYs.length; ++changedYs$index) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 5);
-				com.netease.protobuf.WriteUtils.write$TYPE_UINT32(output, this.changedYs[changedYs$index]);
+				com.netease.protobuf.WriteUtils.write_TYPE_UINT32(output, this.changedYs[changedYs$index]);
 			}
 			for (var changedLayers$index:uint = 0; changedLayers$index < this.changedLayers.length; ++changedLayers$index) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 6);
-				com.netease.protobuf.WriteUtils.write$TYPE_UINT32(output, this.changedLayers[changedLayers$index]);
+				com.netease.protobuf.WriteUtils.write_TYPE_UINT32(output, this.changedLayers[changedLayers$index]);
 			}
 			for (var newTile$index:uint = 0; newTile$index < this.newTile.length; ++newTile$index) {
 				com.netease.protobuf.WriteUtils.writeTag(output, com.netease.protobuf.WireType.VARINT, 7);
-				com.netease.protobuf.WriteUtils.write$TYPE_UINT32(output, this.newTile[newTile$index]);
+				com.netease.protobuf.WriteUtils.write_TYPE_UINT32(output, this.newTile[newTile$index]);
 			}
 			for (var fieldKey:* in this) {
 				super.writeUnknown(output, fieldKey);
@@ -104,56 +104,56 @@ package roshan.buffer {
 			var MapBoxX$count:uint = 0;
 			var MapBoxY$count:uint = 0;
 			while (input.bytesAvailable > bytesAfterSlice) {
-				var tag:uint = com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input);
+				var tag:uint = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 				switch (tag >> 3) {
 				case 1:
 					if (change$count != 0) {
 						throw new flash.errors.IOError('Bad data format: MapChange.change cannot be set twice.');
 					}
 					++change$count;
-					this.change = com.netease.protobuf.ReadUtils.read$TYPE_ENUM(input);
+					this.change = com.netease.protobuf.ReadUtils.read_TYPE_ENUM(input);
 					break;
 				case 2:
 					if (MapBoxX$count != 0) {
 						throw new flash.errors.IOError('Bad data format: MapChange.mapBoxX cannot be set twice.');
 					}
 					++MapBoxX$count;
-					this.mapBoxX = com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input);
+					this.mapBoxX = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 					break;
 				case 3:
 					if (MapBoxY$count != 0) {
 						throw new flash.errors.IOError('Bad data format: MapChange.mapBoxY cannot be set twice.');
 					}
 					++MapBoxY$count;
-					this.mapBoxY = com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input);
+					this.mapBoxY = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 					break;
 				case 4:
 					if ((tag & 7) == com.netease.protobuf.WireType.LENGTH_DELIMITED) {
-						com.netease.protobuf.ReadUtils.readPackedRepeated(input, com.netease.protobuf.ReadUtils.read$TYPE_UINT32, this.changedXs);
+						com.netease.protobuf.ReadUtils.readPackedRepeated(input, com.netease.protobuf.ReadUtils.read_TYPE_UINT32, this.changedXs);
 						break;
 					}
-					this.changedXs.push(com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input));
+					this.changedXs.push(com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input));
 					break;
 				case 5:
 					if ((tag & 7) == com.netease.protobuf.WireType.LENGTH_DELIMITED) {
-						com.netease.protobuf.ReadUtils.readPackedRepeated(input, com.netease.protobuf.ReadUtils.read$TYPE_UINT32, this.changedYs);
+						com.netease.protobuf.ReadUtils.readPackedRepeated(input, com.netease.protobuf.ReadUtils.read_TYPE_UINT32, this.changedYs);
 						break;
 					}
-					this.changedYs.push(com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input));
+					this.changedYs.push(com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input));
 					break;
 				case 6:
 					if ((tag & 7) == com.netease.protobuf.WireType.LENGTH_DELIMITED) {
-						com.netease.protobuf.ReadUtils.readPackedRepeated(input, com.netease.protobuf.ReadUtils.read$TYPE_UINT32, this.changedLayers);
+						com.netease.protobuf.ReadUtils.readPackedRepeated(input, com.netease.protobuf.ReadUtils.read_TYPE_UINT32, this.changedLayers);
 						break;
 					}
-					this.changedLayers.push(com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input));
+					this.changedLayers.push(com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input));
 					break;
 				case 7:
 					if ((tag & 7) == com.netease.protobuf.WireType.LENGTH_DELIMITED) {
-						com.netease.protobuf.ReadUtils.readPackedRepeated(input, com.netease.protobuf.ReadUtils.read$TYPE_UINT32, this.newTile);
+						com.netease.protobuf.ReadUtils.readPackedRepeated(input, com.netease.protobuf.ReadUtils.read_TYPE_UINT32, this.newTile);
 						break;
 					}
-					this.newTile.push(com.netease.protobuf.ReadUtils.read$TYPE_UINT32(input));
+					this.newTile.push(com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input));
 					break;
 				default:
 					super.readUnknown(input, tag);
